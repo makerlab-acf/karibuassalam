@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ECO_VILLAGE_LINKS, NAV_LINKS, SITE } from "../data/siteConfig";
 import { useLanguage } from "../context/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import CTAButton from "./CTAButton";
 
 const navLabelKey = {
   Home: "home",
@@ -62,10 +63,31 @@ function FooterContactItem({ icon, label, children }) {
 export default function Footer() {
   const { t, tx } = useLanguage();
   const year = new Date().getFullYear();
+  const whatsAppUrl = `https://wa.me/${SITE.whatsAppPhone}`;
 
   return (
     <footer className="site-footer">
       <div className="container footer-shell">
+        <section className="footer-cta" aria-label={tx("Footer booking call to action")}>
+          <div>
+            <p className="eyebrow">{tx("Start Your Journey")}</p>
+            <h2>{tx("Plan your Zanzibar retreat with confidence")}</h2>
+            <p>
+              {tx(
+                "Get direct guidance on retreats, accommodation, and travel logistics from the Karibu Assalam team."
+              )}
+            </p>
+          </div>
+          <div className="inline-actions">
+            <CTAButton to="/contact?intent=booking" size="sm">
+              {tx("Book Your Stay")}
+            </CTAButton>
+            <CTAButton href={whatsAppUrl} variant="secondary" size="sm" newTab>
+              {tx("Chat on WhatsApp")}
+            </CTAButton>
+          </div>
+        </section>
+
         <div className="footer-grid">
           <section className="footer-col footer-col-brand" aria-labelledby="footer-brand-heading">
             <h2 id="footer-brand-heading" className="visually-hidden">
@@ -73,7 +95,10 @@ export default function Footer() {
             </h2>
             <Link to="/" className="brand-mark">
               <img src={SITE.logoSrc} alt={tx("Karibu Assalam logo")} />
-              <span>{SITE.brandName}</span>
+              <span className="brand-mark__stack">
+                <span className="brand-mark__title">{SITE.brandName}</span>
+                <span className="brand-mark__subtitle">{SITE.nonprofitName}</span>
+              </span>
             </Link>
             <p className="footer-tagline">{tx(SITE.tagline)}</p>
           </section>

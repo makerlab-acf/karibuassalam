@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import Card from "./Card";
+import CTAButton from "./CTAButton";
 import { useLanguage } from "../context/LanguageContext";
 
 function formatPrice(priceFrom, tx) {
-  return `${tx("From")} ${priceFrom}€`;
+  return `${tx("From")} ${priceFrom} EUR`;
 }
 
 export default function RetreatCard({ retreat }) {
@@ -30,9 +30,9 @@ export default function RetreatCard({ retreat }) {
         </div>
         <h3>{tx(retreat.title)}</h3>
         <p>{tx(retreat.shortPromise)}</p>
-        <Link className="text-link" to={`/retreats/${retreat.slug}`}>
+        <CTAButton to={`/retreats/${retreat.slug}`} variant="ghost" size="sm" className="retreat-card__cta">
           {tx("View details")}
-        </Link>
+        </CTAButton>
       </div>
     </Card>
   );

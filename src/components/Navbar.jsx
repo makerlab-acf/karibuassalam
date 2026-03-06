@@ -92,7 +92,7 @@ export default function Navbar() {
 
         <div className="nav-actions">
           <LanguageToggle />
-          <CTAButton to="/contact?intent=booking" variant="primary" size="sm">
+          <CTAButton to="/contact?intent=booking" variant="primary" size="sm" className="nav-booking-btn">
             {t.nav.bookNow}
           </CTAButton>
           <button

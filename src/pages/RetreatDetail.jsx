@@ -11,7 +11,7 @@ import { buildMailtoUrl } from "../utils/contact";
 import { useLanguage } from "../context/LanguageContext";
 
 function formatPrice(value, tx) {
-  return `${tx("From")} ${value}€`;
+  return `${tx("From")} ${value} EUR`;
 }
 
 function itineraryHeading(retreat, tx) {

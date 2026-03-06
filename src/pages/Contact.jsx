@@ -212,6 +212,9 @@ export default function Contact() {
               <button type="button" className="btn btn-primary" onClick={() => handleOutbound("whatsapp")}>
                 {tx("Send via WhatsApp")}
               </button>
+              <button type="button" className="btn btn-secondary" onClick={() => handleOutbound("email")}>
+                {tx("Send via Email")}
+              </button>
             </div>
 
             {status && <p className="form-status" role="status">{status}</p>}

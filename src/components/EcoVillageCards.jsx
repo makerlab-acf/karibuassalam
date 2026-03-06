@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import roomsImg from "../../pics/rooms/camps-22-768x576.webp";
 import foodImg from "../../pics/rooms/food-1.webp";
 import campusImg from "../../pics/rooms/Image-2-edited-768x576.webp";
 import Card from "./Card";
+import CTAButton from "./CTAButton";
 
 const cards = [
   {
@@ -42,9 +42,9 @@ export default function EcoVillageCards() {
           <div className="card-body">
             <h3>{tx(card.title)}</h3>
             <p>{tx(card.text)}</p>
-            <Link className="text-link" to={card.to}>
+            <CTAButton to={card.to} variant="ghost" size="sm" className="eco-card__cta">
               {tx("Learn more")}
-            </Link>
+            </CTAButton>
           </div>
         </Card>
       ))}
