@@ -1341,10 +1341,25 @@ main {
 
   .nav-actions {
     gap: 0.45rem;
+    justify-self: end;
+    margin-left: auto;
   }
 
   .site-header .nav-actions .lang-toggle {
-    display: none;
+    display: inline-flex;
+    order: 1;
+    padding: 0.1rem;
+  }
+
+  .site-header .nav-actions .lang-toggle button {
+    min-width: 1.9rem;
+    padding: 0.28rem 0.46rem;
+    font-size: 0.78rem;
+  }
+
+  .site-header .nav-actions .mobile-menu-button {
+    order: 2;
+    margin-left: 0.05rem;
   }
 
   .site-header .brand-mark__subtitle {

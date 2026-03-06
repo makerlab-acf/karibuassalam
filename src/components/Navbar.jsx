@@ -1,3 +1,4 @@
+// src\components\Navbar.jsx
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ECO_VILLAGE_LINKS, NAV_LINKS, SITE } from "../data/siteConfig";
@@ -22,7 +23,7 @@ export default function Navbar() {
   const [ecoOpen, setEcoOpen] = useState(false);
   const [ecoMobileOpen, setEcoMobileOpen] = useState(false);
   const navRef = useRef(null);
-  const { t, tx } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     function onKeyDown(event) {
@@ -51,7 +52,7 @@ export default function Navbar() {
     <header className="site-header" ref={navRef}>
       <div className="container nav-shell">
         <Link to="/" className="brand-mark" onClick={() => setMobileOpen(false)}>
-          <img src={SITE.logoSrc} alt={tx("Karibu Assalam logo")} />
+          <img src={SITE.logoSrc} alt="Karibu Assalam logo" />
           <span className="brand-mark__stack">
             <span className="brand-mark__title">{SITE.brandName}</span>
             <span className="brand-mark__subtitle">Assalam {t.nav.campus}</span>
